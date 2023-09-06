@@ -2,8 +2,6 @@ const express = require("express");
 
 let userList = require("./mock-data.json");
 
-
-
 const {
     graphqlHTTP
 } = require("express-graphql");
@@ -23,10 +21,9 @@ const app = express();
 
 const userType = new GraphQLObjectType({
     name: "UserType",
-    fields: () => ({
+    fields: {
         id: {
             type: GraphQLID
-
         },
         name: {
             type: GraphQLString
@@ -37,12 +34,11 @@ const userType = new GraphQLObjectType({
         message: {
             type: GraphQLString
         }
-
-    })
+    }
 });
 
-const RootQuery = new GraphQLObjectType({
-    name: "RootQuery",
+const query = new GraphQLObjectType({
+    name: "query",
     fields: {
         users: {
             type: new GraphQLList(userType),
@@ -65,10 +61,7 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
-
-
 //mutation
-
 const mutation = new GraphQLObjectType({
     name: "mutations",
     fields: {
@@ -131,7 +124,7 @@ const mutation = new GraphQLObjectType({
                     type: GraphQLString
                 }
             },
-            resolve(parelnt, {
+            resolve(parent, {
                 id,
                 name,
                 email
@@ -148,8 +141,8 @@ const mutation = new GraphQLObjectType({
 
 
 const schema = new GraphQLSchema({
-    query: RootQuery,
-    mutation: mutation
+    query,
+    mutation
 });
 
 // middleware
