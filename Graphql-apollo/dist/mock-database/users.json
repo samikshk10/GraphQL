@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Phineas",
+        "email": "pfranciottoi0@hostgator.com",
+        "age": 12
+    },
+    {
+        "id": 2,
+        "name": "Mikel",
+        "email": "mgregoli1@amazon.de",
+        "age": 22
+    },
+    {
+        "id": 3,
+        "name": "Moira",
+        "email": "mmazzilli2@163.com",
+        "age": 21
+    },
+    {
+        "id": 4,
+        "name": "Kaja",
+        "email": "ktrue3@washington.edu",
+        "age": 22
+    },
+    {
+        "id": 5,
+        "name": "Robbie",
+        "email": "rmcharg4@scientificamerican.com",
+        "age": 25
+    }
+]
