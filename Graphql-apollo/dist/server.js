@@ -1,7 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import express from "express";
-import * as userList from "./mock-database/users.json" assert { type: "json" };
+import userList from "./mock-database/users.json" assert { type: "json" };
 const app = express();
 const typeDefs = `
   type UserType {
